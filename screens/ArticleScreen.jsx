@@ -10,10 +10,11 @@ const styles = StyleSheet.create({
     },
 });
 
-export default ArticleScreen = () => {
+export default ArticleScreen = ({ route }) => {
+    const { article } = route.params;
     return (
         <SafeAreaView style={styles.container}>
-            <WebView source={{ uri: 'https://expo.io' }} />;
+            <WebView source={{ uri: article.url }} />
         </SafeAreaView>
     );
 };

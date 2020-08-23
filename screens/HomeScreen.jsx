@@ -32,7 +32,9 @@ export default HomeScreen = ({ navigation }) => {
                         title={item.title}
                         imageUrl={item.urlToImage}
                         onPress={() => {
-                            navigation.navigate('Article');
+                            navigation.navigate('Article', {
+                                article: item,
+                            });
                         }}
                     />
                 )}
