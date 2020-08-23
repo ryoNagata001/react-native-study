@@ -1,14 +1,16 @@
 import React from 'react';
-import { StyleSheet, View, Image, Text } from 'react-native';
+import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 
 export default ListItem = (props) => {
     return (
-        <View style={style.itemContainer}>
+        <TouchableOpacity style={style.itemContainer} onPress={props.onPress}>
             <View style={style.leftContainer}>
-                <Image
-                    style={{ height: 100, width: 100 }}
-                    source={{ uri: props.imageUrl }}
-                />
+                {!!props.imageUrl && (
+                    <Image
+                        style={{ height: 100, width: 100 }}
+                        source={{ uri: props.imageUrl }}
+                    />
+                )}
             </View>
             <View style={style.rightContainer}>
                 <Text numberOfLines={3} style={style.text}>
@@ -16,7 +18,7 @@ export default ListItem = (props) => {
                 </Text>
                 <Text style={style.subText}>{props.author}</Text>
             </View>
-        </View>
+        </TouchableOpacity>
     );
 };
 
