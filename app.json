@@ -17,7 +17,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.ryoNagata001.news-app"
+    },
+    "android": {
+      "package": "com.ryoNagata001.newsapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
